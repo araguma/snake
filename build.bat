@@ -1,12 +1,16 @@
 call "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
 
-cd ".\out"
+set PROJECT_NAME=snake
+set OUTPUT_FOLDER=release
+
+mkdir %OUTPUT_FOLDER%
+cd .\%OUTPUT_FOLDER%
 
 cl ^
     /I"C:\Libraries\SDL2-2.0.22\include" ^
     /I"..\include" ^
-    /Fe".\snake" ^
-    "../src/*.cpp" ^
+    /Fe".\%PROJECT_NAME%" ^
+    ../src/*.cpp ^
 /link ^
     /LIBPATH:"C:\Libraries\SDL2-2.0.22\lib\x64" ^
     /SUBSYSTEM:CONSOLE ^
@@ -14,4 +18,4 @@ cl ^
 
 del *.obj
 
-"..\out\snake.exe"  
+..\%OUTPUT_FOLDER%\%PROJECT_NAME%.exe
