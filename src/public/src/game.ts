@@ -1,3 +1,4 @@
+import { numApples, snakeSpeed } from './config.js';
 import { Direction, Entity } from './types.js';
 import Snake from './snake.js';
 import Apple from './apple.js';
@@ -22,7 +23,7 @@ class Game {
 
         this.entities = {
             snakes: new Array(1).fill(null).map(() => new Snake(this)),
-            apples: new Array(3).fill(null).map(() => new Apple(this)),
+            apples: new Array(numApples).fill(null).map(() => new Apple(this)),
         };
 
         document.body.addEventListener('keydown', (event) => {
@@ -46,7 +47,7 @@ class Game {
         setInterval(() => {
             this.update();
             this.render();
-        }, 100);
+        }, 1000 / snakeSpeed);
     }
     private fullscreen() {
         this.canvas.width = this.container.clientWidth;
