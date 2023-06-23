@@ -2,7 +2,7 @@
   "name": "snake",
   "version": "1.0.0",
   "type": "module",
-  "description": "Clone of the popular game snake.",
+  "description": "Remake of the game Snake.",
   "main": "index.js",
   "scripts": {
     "clean": "rm -rf ./dist/ && mkdir ./dist/",
