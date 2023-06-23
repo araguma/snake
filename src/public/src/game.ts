@@ -22,23 +22,23 @@ class Game {
 
         this.entities = {
             snakes: new Array(1).fill(null).map(() => new Snake(this)),
-            apples: new Array(5).fill(null).map(() => new Apple(this)),
+            apples: new Array(3).fill(null).map(() => new Apple(this)),
         };
 
         document.body.addEventListener('keydown', (event) => {
             if(!this.entities.snakes[0]) return;
             switch(event.key) {
                 case 'w':
-                    this.entities.snakes[0].direction = Direction.Up;
+                    this.entities.snakes[0].setDirection(Direction.Up);
                     break;
                 case 's':
-                    this.entities.snakes[0].direction = Direction.Down;
+                    this.entities.snakes[0].setDirection(Direction.Down);
                     break;
                 case 'a':
-                    this.entities.snakes[0].direction = Direction.Left;
+                    this.entities.snakes[0].setDirection(Direction.Left);
                     break;
                 case 'd':
-                    this.entities.snakes[0].direction = Direction.Right;
+                    this.entities.snakes[0].setDirection(Direction.Right);
                     break;
             }
         });
@@ -46,7 +46,7 @@ class Game {
         setInterval(() => {
             this.update();
             this.render();
-        }, 1000);
+        }, 100);
     }
     private fullscreen() {
         this.canvas.width = this.container.clientWidth;

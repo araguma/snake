@@ -1,10 +1,10 @@
 import { gridSize } from './config.js';
-import { Entity, Coordinate } from "./types.js";
+import { Entity, Vector } from "./types.js";
 import Game from './game.js';
 
 class Apple implements Entity {
     game;
-    location: Coordinate = {
+    location: Vector = {
         x: -1,
         y: -1,
     };
