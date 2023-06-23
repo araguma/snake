@@ -1,27 +1,32 @@
 # Snake
 A Typescript remake of the popular action video game Snake. This implementation of the game does not have an ending screen. If you collide with your own tail, you lose that segment and the game continues. This implementation also features a dynamic field which resizes based on your browser window size.
 
+## Prerequisite
+
+- 64-bit Git for Windows
+- Node.js
+
 ## Run Locally
 
-Clone the project
+1. Clone the project
 ```bash
 git clone https://github.com/araguma/snake.git
 ```
 
-Go to the project directory
+2. Go to the project directory
 ```bash
 cd snake
 ```
 
-Install dependencies
+3. Install dependencies
 ```bash
 npm install
 ```
 
-Start the server
+4. Start the server
 
 ```bash
 npm start
 ```
 
-Go to http://localhost:3000/
+5. Go to http://localhost:3000/
