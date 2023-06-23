@@ -25,8 +25,8 @@ class Snake implements Entity {
     update() {
         this.direction = this.nextDirection;
         this.body.unshift({
-            x: this.body[0].x + this.direction.x * gridSize,
-            y: this.body[0].y + this.direction.y * gridSize,
+            x: loop(this.body[0].x + this.direction.x * gridSize, 0, Math.floor(this.game.canvas.width / gridSize) * gridSize),
+            y: loop(this.body[0].y + this.direction.y * gridSize, 0, Math.floor(this.game.canvas.height / gridSize) * gridSize),
         });
         while(this.body.length > this.length)
             this.body.pop();
@@ -52,6 +52,14 @@ class Snake implements Entity {
             this.game.ctx.fillRect(segment.x, segment.y, gridSize, gridSize);
         });
     }
+}
+
+function loop(value: number, min: number, max: number): number {
+    if(value < min)
+        return max;
+    if(value > max)
+        return min;
+    return value;
 }
 
 export default Snake;
