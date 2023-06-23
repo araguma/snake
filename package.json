@@ -5,10 +5,10 @@
   "description": "Remake of the game Snake.",
   "main": "index.js",
   "scripts": {
-    "clean": "rm -rf ./dist/ && mkdir ./dist/",
+    "clean": "rm -rf ./dist/*",
     "build": "cd ./src/ && mkdir -p ../dist/ && find ./ -type f ! -name \"*.ts\" | xargs cp --parent -t ../dist/ && npx tsc",
-    "watch": "cd ./src/ && chokidar \"./**/!(*.ts)\" -c \"if [ '{event}' = 'change' ]; then cp --parent '{path}' ../dist/; fi;\" & npx tsc -w",
-    "dev": "npm run build && nodemon ./dist/index.js & npm run watch",
+    "watch": "cd ./src/ && mkdir -p ../dist/ && npx chokidar \"./**/!(*.ts)\" -c \"if [ '{event}' = 'change' ]; then cp --parent '{path}' ../dist/; fi;\" & npx tsc -w",
+    "dev": "npm run build && npx nodemon --watch ./src/ ./dist/index.js & npm run watch",
     "start": "npm run build && node ./dist/index.js"
   },
   "repository": {
