@@ -3,25 +3,32 @@ A Typescript remake of the popular action video game Snake. This implementation 
 
 ## Run Locally
 
-Clone the project
+### Prerequisite
+
+- 64-bit Git for Windows
+- Node.js
+
+### Installation
+
+1. Clone the project
 ```bash
 git clone https://github.com/araguma/snake.git
 ```
 
-Go to the project directory
+2. Go to the project directory
 ```bash
 cd snake
 ```
 
-Install dependencies
+3. Install dependencies
 ```bash
 npm install
 ```
 
-Start the server
+4. Start the server
 
 ```bash
 npm start
 ```
 
-Go to http://localhost:3000/
+5. Go to http://localhost:3000/
